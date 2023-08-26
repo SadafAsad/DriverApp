@@ -10,9 +10,9 @@ const HomeScreen = () => {
                 source={{uri: 'https://links.papareact.com/gzs'}}
                 style={{resizeMode: 'contain', width: 100, height: 100}}
             />
-        </View>
 
         <NavOptions />
+        </View>
     </SafeAreaView>
   )
 }
