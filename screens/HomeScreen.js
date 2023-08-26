@@ -1,14 +1,12 @@
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native'
+import { SafeAreaView, Text } from 'react-native'
 import React from 'react'
 
 const HomeScreen = () => {
   return (
     <SafeAreaView>
-      <Text>HomeScreen</Text>
+      <Text className='text-red-500 p-10'>HERE at Home Screen!!</Text>
     </SafeAreaView>
   )
 }
 
 export default HomeScreen
-
-const styles = StyleSheet.create({})
