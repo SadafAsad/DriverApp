@@ -1,5 +1,6 @@
 import { Image, SafeAreaView, Text, View } from 'react-native'
 import React from 'react'
+import NavOptions from '../components/NavOptions'
 
 const HomeScreen = () => {
   return (
@@ -10,6 +11,8 @@ const HomeScreen = () => {
                 style={{resizeMode: 'contain', width: 100, height: 100}}
             />
         </View>
+
+        <NavOptions />
     </SafeAreaView>
   )
 }
