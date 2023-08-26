@@ -1,10 +1,15 @@
-import { SafeAreaView, Text } from 'react-native'
+import { Image, SafeAreaView, Text, View } from 'react-native'
 import React from 'react'
 
 const HomeScreen = () => {
   return (
-    <SafeAreaView>
-      <Text className='text-red-500 p-10'>HERE at Home Screen!!</Text>
+    <SafeAreaView className='bg-white h-full'>
+        <View className='p-5'>
+            <Image 
+                source={{uri: 'https://links.papareact.com/gzs'}}
+                style={{resizeMode: 'contain', width: 100, height: 100}}
+            />
+        </View>
     </SafeAreaView>
   )
 }
