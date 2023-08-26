@@ -6,6 +6,7 @@ const Map = () => {
   return (
     <MapView 
         className='flex-1'
+        mapType='mutedStandard'
         initialRegion={{
             latitude: 37.78825,
             longitude: -122.4324,
