@@ -1,6 +1,7 @@
 import { View, Text, TouchableOpacity, SafeAreaView } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native'
+import Map from '../components/Map'
 
 const MapScreen = () => {
     const navigation= useNavigation()
@@ -11,7 +12,7 @@ const MapScreen = () => {
         </TouchableOpacity>
 
         <View className='h-1/2'>
-
+            <Map />
         </View>
 
         <View className='h-1/2'>
