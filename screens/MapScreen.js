@@ -5,11 +5,19 @@ import { useNavigation } from '@react-navigation/native'
 const MapScreen = () => {
     const navigation= useNavigation()
   return (
-    <SafeAreaView>
+    <View>
         <TouchableOpacity onPress={() => {navigation.goBack()}}>
             <Text>MapScreen</Text>
         </TouchableOpacity>
-    </SafeAreaView>
+
+        <View className='h-1/2'>
+
+        </View>
+
+        <View className='h-1/2'>
+
+        </View>
+    </View>
   )
 }
 
