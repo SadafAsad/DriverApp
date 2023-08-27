@@ -5,6 +5,7 @@ import { GOOGLE_MAPS_APIKEY } from "@env"
 import { useDispatch } from 'react-redux'
 import { setOrigin, setDestination } from '../slices/navSlice'
 import { useNavigation } from '@react-navigation/native'
+import NavFavourites from './NavFavourites'
 
 const NavigateCard = () => {
     const dispatch = useDispatch()
@@ -14,43 +15,45 @@ const NavigateCard = () => {
         <SafeAreaView className='bg-white flex-1'>
             <Text className='text-center py-5 text-xl'>Good Morning, Sadaf</Text>
             <View className='border-t border-gray-200 flex-shrink'>
-            <View>
-                <GooglePlacesAutocomplete
-                    placeholder='Where To?'
-                    debounce={400}
-                    styles={{
-                        container: {
-                            backgroundColor: 'white',
-                            paddingTop: 20,
-                            flex: 0
-                        },
-                        textInput: {
-                            backgroundColor: '#dddddf',
-                            borderRadius: 0,
-                            fontSize: 18
-                        },
-                        textInputContainer: {
-                            paddingHorizontal: 20,
-                            paddingBottom: 0
-                        }
-                    }}
-                    query={{
-                        key: GOOGLE_MAPS_APIKEY,
-                        language: 'en'
-                    }}
-                    nearbyPlacesAPI='GooglePlacesSearch'
-                    returnKeyType={'search'}
-                    fetchDetails={true}
-                    enablePoweredByContainer={false}
-                    onPress={(data, details = null) => {
-                        dispatch(setDestination({
-                            location: details.geometry.location,
-                            description: data.description
-                        }))
-                        navigation.navigate('RideOptions')
-                    }}
-                />
-            </View>
+                <View>
+                    <GooglePlacesAutocomplete
+                        placeholder='Where To?'
+                        debounce={400}
+                        styles={{
+                            container: {
+                                backgroundColor: 'white',
+                                paddingTop: 20,
+                                flex: 0
+                            },
+                            textInput: {
+                                backgroundColor: '#dddddf',
+                                borderRadius: 0,
+                                fontSize: 18
+                            },
+                            textInputContainer: {
+                                paddingHorizontal: 20,
+                                paddingBottom: 0
+                            }
+                        }}
+                        query={{
+                            key: GOOGLE_MAPS_APIKEY,
+                            language: 'en'
+                        }}
+                        nearbyPlacesAPI='GooglePlacesSearch'
+                        returnKeyType={'search'}
+                        fetchDetails={true}
+                        enablePoweredByContainer={false}
+                        onPress={(data, details = null) => {
+                            dispatch(setDestination({
+                                location: details.geometry.location,
+                                description: data.description
+                            }))
+                            navigation.navigate('RideOptions')
+                        }}
+                    />
+                </View>
+
+                <NavFavourites />
             </View>
         </SafeAreaView>
     )
