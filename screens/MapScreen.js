@@ -12,10 +12,6 @@ const MapScreen = () => {
 
     return (
         <View>
-            <TouchableOpacity onPress={() => {navigation.goBack()}}>
-                <Text>MapScreen</Text>
-            </TouchableOpacity>
-
             <View className='h-1/2'>
                 <Map />
             </View>
