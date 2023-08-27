@@ -1,7 +1,28 @@
-import { View, Text, SafeAreaView, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, TouchableOpacity, FlatList, Image } from 'react-native'
 import React from 'react'
 import { Icon } from '@rneui/base'
 import { useNavigation } from '@react-navigation/native'
+
+const data = [
+    {
+        id: 'Uber-X-123',
+        title: 'UberX',
+        multiplier: 1,
+        image: 'https://links.papareact.com/3pn'
+    },
+    {
+        id: 'Uber-X-456',
+        title: 'Uber XL',
+        multiplier: 1.2,
+        image: 'https://links.papareact.com/5w8'
+    },
+    {
+        id: 'Uber-X-789',
+        title: 'Uber LUX',
+        multiplier: 1.75,
+        image: 'https://links.papareact.com/7pf'
+    }
+]
 
 const RideOptionsCard = () => {
     const navigation = useNavigation()
@@ -17,6 +38,23 @@ const RideOptionsCard = () => {
                 </TouchableOpacity>
                 <Text className='text-center py-5 text-xl'>Select a Ride</Text>
             </View>
+
+            <FlatList
+                data={data}
+                keyExtractor={(item) => item.id}
+                renderItem={({item}) => (
+                    <TouchableOpacity className='flex-row items-center justify-between px-10'>
+                        <Image 
+                            source={{uri: item.image}}
+                            style={{width: 100, height: 100, resizeMode: 'contain'}}
+                        />
+                        <View>
+                            <Text>{item.title}</Text>
+                            <Text>Travel time ...</Text>
+                        </View>
+                    </TouchableOpacity>
+                )}
+            />
         </SafeAreaView>
     )
 }
