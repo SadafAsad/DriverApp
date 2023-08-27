@@ -34,7 +34,7 @@ const RideOptionsCard = () => {
     const travelTimeInfo = useSelector(selectTravelTimeInfo)
     
     return (
-        <SafeAreaView className='bg-white flex-grow'>
+        <SafeAreaView className='bg-white flex-1'>
             <View>
                 <TouchableOpacity 
                     className='absolute top-3 left-5 p-3 rounded-full z-50'
@@ -57,7 +57,7 @@ const RideOptionsCard = () => {
                     >
                         <Image 
                             source={{uri: item.image}}
-                            style={{width: 100, height: 100, resizeMode: 'contain'}}
+                            style={{width: 80, height: 80, resizeMode: 'contain'}}
                         />
                         <View className='-ml-6'>
                             <Text className='text-xl font-semibold'>{item.title}</Text>
