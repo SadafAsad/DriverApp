@@ -77,7 +77,7 @@ const RideOptionsCard = () => {
                 )}
             />
 
-            <View>
+            <View className='mt-auto border-t border-gray-200'>
                 <TouchableOpacity 
                     className={`bg-black py-3 m-3 ${!selected && 'bg-gray-300'}`}
                     disabled={!selected}
