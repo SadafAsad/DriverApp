@@ -22,6 +22,12 @@ const NavFavourites = () => {
         <FlatList
             data={data}
             keyExtractor={(item) => item.id}
+            ItemSeparatorComponent={() => (
+                <View
+                    className='bg-gray-200'
+                    style={{height: 0.5}}
+                />
+            )}
             renderItem={({item}) => (
                 <TouchableOpacity className='flex-row items-center p-5'>
                     <View className='mr-4 rounded-full bg-gray-300 p-3'>
