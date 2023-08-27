@@ -1,5 +1,5 @@
 import { View, Text, SafeAreaView, TouchableOpacity, FlatList, Image } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@rneui/base'
 import { useNavigation } from '@react-navigation/native'
 
@@ -26,6 +26,7 @@ const data = [
 
 const RideOptionsCard = () => {
     const navigation = useNavigation()
+    const [selected, setSelected] = useState(null)
     
     return (
         <SafeAreaView className='bg-white flex-grow'>
@@ -43,7 +44,10 @@ const RideOptionsCard = () => {
                 data={data}
                 keyExtractor={(item) => item.id}
                 renderItem={({item}) => (
-                    <TouchableOpacity className='flex-row items-center justify-between px-10'>
+                    <TouchableOpacity 
+                        className={`flex-row items-center justify-between px-10 ${item.id === selected?.id && 'bg-gray-200'}`}
+                        onPress={() => {setSelected(item)}}
+                    >
                         <Image 
                             source={{uri: item.image}}
                             style={{width: 100, height: 100, resizeMode: 'contain'}}
