@@ -48,10 +48,11 @@ const RideOptionsCard = () => {
                             source={{uri: item.image}}
                             style={{width: 100, height: 100, resizeMode: 'contain'}}
                         />
-                        <View>
-                            <Text>{item.title}</Text>
+                        <View className='-ml-6'>
+                            <Text className='text-xl font-semibold'>{item.title}</Text>
                             <Text>Travel time ...</Text>
                         </View>
+                        <Text className='text-xl'>$99</Text>
                     </TouchableOpacity>
                 )}
             />
