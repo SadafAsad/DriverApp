@@ -60,6 +60,15 @@ const RideOptionsCard = () => {
                     </TouchableOpacity>
                 )}
             />
+
+            <View>
+                <TouchableOpacity 
+                    className={`bg-black py-3 m-3 ${!selected && 'bg-gray-300'}`}
+                    disabled={!selected}
+                >
+                    <Text className='text-center text-white text-xl'>Choose {selected?.title}</Text>
+                </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
